@@ -20,4 +20,18 @@ class ImgRes {
   static const ipadPro = "assets/ipad_pro.jpeg";
   static const watchSe = "assets/watch_se.jpeg";
   static const watchBand = "assets/new.jpeg";
+
+  ///help section
+  static const appleMan = "assets/apple_man.jpg";
+  static const applePeoples = "assets/apple_peoples.jpg";
+  static const appleAppIcons = "assets/apple_app_icons.jpg";
+  static const appleGenius = "assets/apple_genius.jpg";
+
+  /// apple store reason
+  static const carSvg = "assets/ic_car.svg";
+  static const cardSvg = "assets/ic_card.svg";
+  static const sellerSvg = "assets/ic_seller.svg";
+  static const shopSvg = "assets/ic_shop.svg";
+  static const smailSvg = "assets/ic_smail.svg";
+  static const storeAppleIcon = "assets/ic_store_apple_icon.svg";
 }

@@ -1,8 +1,9 @@
 import 'dart:ui';
 
 import 'package:dot_apple_web/utils/color_asset.dart';
-import 'package:dot_apple_web/utils/img_res.dart';
+import 'package:dot_apple_web/view/home/widgets/apple_store_reason.dart';
 import 'package:dot_apple_web/view/home/widgets/device_list.dart';
+import 'package:dot_apple_web/view/home/widgets/help_section.dart';
 import 'package:dot_apple_web/view/home/widgets/home_header.dart';
 import 'package:dot_apple_web/view/home/widgets/product_news.dart';
 import 'package:flutter/cupertino.dart';
@@ -29,6 +30,8 @@ class HomeView extends StatelessWidget {
           HomeHeader(),
           DeviceList(),
           ProductNews(),
+          HelpSection(),
+          AppleStoreReason(),
         ],
       ),
     );
@@ -42,7 +45,7 @@ class HomeView extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            appBarIcon(FaIcon(FontAwesomeIcons.apple)),
+            appBarIcon(const FaIcon(FontAwesomeIcons.apple)),
             appBarText(
               "스토어",
               () {

@@ -1,5 +1,6 @@
+import 'package:dot_apple_web/model/product_news_model.dart';
 import 'package:dot_apple_web/utils/color_asset.dart';
-import 'package:dot_apple_web/utils/img_res.dart';
+import 'package:dot_apple_web/view/home/widgets/titleWidget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -14,48 +15,29 @@ class ProductNews extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          productNewsTitle(),
+          const TitleWidget(first: "최신 제품.", second: "따끈따끈한 신제품 이야기."),
           const SizedBox(height: 20),
+
+          /// 마우스로 스크롤 가능 하게 해줘
+
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
-            child: Row(
-              children: List.generate(10, (index) {
-                return productCardItem();
-              }),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 80),
+              child: Row(
+                children: List.generate(productNewsList.length, (index) {
+                  ProductNewsModel item = productNewsList[index];
+                  return productCardItem(item);
+                }),
+              ),
             ),
           ),
-          const SizedBox(height: 100),
         ],
       ),
     );
   }
 
-  Widget productNewsTitle() {
-    return Container(
-      margin: const EdgeInsets.only(left: 100, right: 100, top: 60),
-      child: RichText(
-        text: const TextSpan(
-            text: "최신 제품.",
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.w600,
-              color: ColorAsset.deviceTextBlack,
-            ),
-            children: [
-              TextSpan(
-                text: "따끈따끈한 신제품 이야기.",
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w600,
-                  color: ColorAsset.productNewsGray,
-                ),
-              )
-            ]),
-      ),
-    );
-  }
-
-  Widget productCardItem() {
+  Widget productCardItem(ProductNewsModel item) {
     return Container(
       padding: const EdgeInsets.only(left: 20, top: 30, bottom: 20),
       margin: const EdgeInsets.only(left: 20),
@@ -63,7 +45,7 @@ class ProductNews extends StatelessWidget {
       height: 500,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(ImgRes.macAir),
+          image: AssetImage(item.imgRes),
           fit: BoxFit.cover,
         ),
         color: Colors.white,
@@ -79,7 +61,7 @@ class ProductNews extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "MACBOOK AIR",
+            item.product,
             style: TextStyle(
               fontSize: 12,
               fontWeight: FontWeight.w500,
@@ -88,7 +70,7 @@ class ProductNews extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            "어디서나 종횡무진할 수 있도록.",
+            item.title,
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w600,
@@ -97,7 +79,7 @@ class ProductNews extends StatelessWidget {
           ),
           const SizedBox(height: 10),
           Text(
-            "₩1,390,000부터",
+            item.price,
             style: TextStyle(
               fontSize: 16,
               fontWeight: FontWeight.w500,
