@@ -6,4 +6,3 @@ class ProductNewsModel {
 
   ProductNewsModel(this.product, this.title, this.price, this.imgRes);
 }
-함
