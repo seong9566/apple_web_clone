@@ -21,7 +21,7 @@ class ImgRes {
   static const watchSe = "assets/watch_se.jpeg";
   static const watchBand = "assets/new.jpeg";
 
-  ///help section
+  /// help section
   static const appleMan = "assets/apple_man.jpg";
   static const applePeoples = "assets/apple_peoples.jpg";
   static const appleAppIcons = "assets/apple_app_icons.jpg";
@@ -34,4 +34,17 @@ class ImgRes {
   static const shopSvg = "assets/ic_shop.svg";
   static const smailSvg = "assets/ic_smail.svg";
   static const storeAppleIcon = "assets/ic_store_apple_icon.svg";
+
+  /// accessories
+  static const accessoriesFirst = "assets/iphone_15_light_blue.jpeg";
+  static const iphone15LightBlue = "assets/accessories_iphone15_light_blue.jpg";
+  static const iphone15Cherry = "assets/accessories_iphone15_cherry.jpg";
+  static const watchBandSoftMint =
+      "assets/accessories_watch_band_soft_mint.jpg";
+  static const watchBandSunShine =
+      "assets/accessories_watch_band_sun_shine.jpg";
+  static const iphone15EveryGreen =
+      "assets/accessories_iphone15_ever_green.jpg";
+  static const keyRingCoral = "assets/accessories_key_ring_coral.jpg";
+  static const accessoriesLast = "assets/accessories_first.jpg";
 }
